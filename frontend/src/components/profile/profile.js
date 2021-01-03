@@ -17,14 +17,12 @@ class Profile extends React.Component {
     
 
     render() {
-        console.log('this.props.currenUser.id', this.props.currentUser.id)
         const profile_questions = () => {
             if(this.props.profile_questions.length > 0){
                 return(
                 this.props.profile_questions.map((question, id) => {
                     if(question.user === this.props.currentUser.id){
                         return(
-                            //!MAPING AND RENDERING ONE OF THESE DIVS WHEN QUESTION ID !== CURENT USER
                             <div key={id}>
                                 Question Asked:
                                 
@@ -33,14 +31,13 @@ class Profile extends React.Component {
                                 </Link>
                                 
                                 <div>
-                                    {question.user}
+                                    {question.content}
                                 </div>
                             </div>
                         )
                     }else{
                         return (
-                            //!MAPING AND RENDERING ONE OF THESE DIVS WHEN QUESTION ID !== CURENT USER
-                            <div key={id} >
+                            <div key={id}>
                                 Question Answered:
                                 <div>
                                     <Link to={`/question/${question._id}`}>
@@ -55,7 +52,7 @@ class Profile extends React.Component {
                     }
                 })
                 )
-                // console.log(this.props.profile_questions)
+                console.log(this.props.profile_questions)
             }
         }
         
