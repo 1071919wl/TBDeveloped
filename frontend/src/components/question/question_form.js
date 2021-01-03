@@ -1,15 +1,18 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 
 class QuestionForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            subject: this.props.subject,
+            // subject: this.props.subject,
+            subject: '',
             content: this.props.content,
             tag: this.props.tag,
-            solved: this.props.solved
+            solved: this.props.solved,
+            errors: this.props.errors
+            
         }
 
         this.submit = this.submit.bind(this)
@@ -17,6 +20,11 @@ class QuestionForm extends React.Component{
         this.update = this.update.bind(this)
 
         
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        this.setState({ errors: nextProps.errors })
     }
 
     update(field){
@@ -50,6 +58,17 @@ class QuestionForm extends React.Component{
         this.props.processForm(this.props.questionId, newQuestion)
     }
     
+    renderErrors() {
+        return (
+            <ul>
+                {Object.keys(this.state.errors).map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {this.state.errors[error]}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
 
     render(){
@@ -81,7 +100,6 @@ class QuestionForm extends React.Component{
                         <button type='submit'>{this.props.formType}</button>
                     </label>
 
-
                 </form>
             )
         }
@@ -102,7 +120,9 @@ class QuestionForm extends React.Component{
                     </select>
                 </label>
                 <label>
-                    <button type='submit'>{this.props.formType}</button>
+                    
+                        <button type='submit'>{this.props.formType}</button>
+                        {this.renderErrors()}
                 </label>
                 
 
