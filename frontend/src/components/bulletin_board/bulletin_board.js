@@ -15,6 +15,8 @@ class BulletinBoard extends React.Component{
             idx: 0
         }
         this.handleClick = this.handleClick.bind(this)
+
+        this.directMessage = this.directMessage.bind(this)
     }
 
     componentDidMount() {
@@ -31,8 +33,30 @@ class BulletinBoard extends React.Component{
         return Object.keys(obj).length === 0;
     }
 
+
+
+
+
+
+    directMessage(){ //should take in 2 arguments so its not hard coded
+        //need caseID
+        if(this.props.currentUserID === "5ff22c44d70a0ea98ed91128" || this.props.currentUserID === '6000932d7897e68131a54132'){
+            return (
+                <div>
+                    <div>---------------</div>
+                    <Messenger />
+                    <div>---------------</div>
+                </div>
+            )
+        }
+    }
+
+
+
+
+
+
     render(){
-        
 
         // console.log(this.props.questions)
 
@@ -74,7 +98,8 @@ class BulletinBoard extends React.Component{
                         <CreateQuestionFormContainer />
                     </div>
 
-                    <Messenger />
+                    {/* {this.directMessage()} */}
+                    
                 </div>
             )
         }

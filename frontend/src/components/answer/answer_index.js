@@ -2,6 +2,7 @@ import React from 'react'
 import AnswerIndexItemContainer from '../answer/answer_index_item_container'
 import { allUsers } from '../../util/session_api_util'
 
+
 class AnswerIndex extends React.Component {
    constructor(props) {
        super(props)
@@ -9,6 +10,7 @@ class AnswerIndex extends React.Component {
 
 
        this.createChat = this.createChat.bind(this);
+
    }
 
    createChat(questionID, responseID, responseUserID, posterID){
@@ -19,12 +21,15 @@ class AnswerIndex extends React.Component {
             responseUserID: responseUserID
         };
         this.props.createChat(newChat);
+
    }
     
 
 
+
     render() {
         let questionID = this.props.questionID;
+
         return(
 
         <div>
@@ -36,6 +41,7 @@ class AnswerIndex extends React.Component {
                     </div>
                     )
             })}
+
         </div>
         )
     }

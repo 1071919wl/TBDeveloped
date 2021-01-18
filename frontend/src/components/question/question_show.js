@@ -9,8 +9,7 @@ import AnswerIndexItemContainer from '../answer/answer_index_item_container'
 import CreateAnswersFormContainer from '../answer/create_answers_form_container'
 
 
-
-
+import Messenger from '../messenger/messenger'
 
 class QuestionShow extends React.Component {
 
@@ -21,6 +20,9 @@ class QuestionShow extends React.Component {
         }
         this.updateQuestion = this.props.updateQuestion.bind(this)
         this.deleteQuestion = this.props.deleteQuestion.bind(this)
+
+
+        this.directMessage = this.directMessage.bind(this)
     }
 
     componentDidMount(){
@@ -30,6 +32,20 @@ class QuestionShow extends React.Component {
     
     isEmpty(obj){
         return Object.keys(obj).length === 0
+    }
+
+
+    directMessage(){ //should take in 2 arguments so its not hard coded
+        //need caseID
+        if(this.props.userId === "5ff22c44d70a0ea98ed91128" || this.props.userId === '6000932d7897e68131a54132'){
+            return (
+                <div>
+                    <div>---------------</div>
+                    <Messenger />
+                    <div>---------------</div>
+                </div>
+            )
+        }
     }
 
     
@@ -175,6 +191,10 @@ class QuestionShow extends React.Component {
 
 
                     {createAnswers()}
+                    
+                    {/* WL CHAT TEST */}
+                    {this.directMessage()}
+                    {/* WL CHAT TEST */}
 
 
                     <div>

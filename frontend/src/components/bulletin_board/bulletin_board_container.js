@@ -6,7 +6,10 @@ import BulletinBoard from './bulletin_board'
 
 const mapStateToProps = (state) => {
     // console.log(state.entities)
-    return({questions: state.entities.questions})
+    return({
+        questions: state.entities.questions,
+        currentUserID: state.session.user.id
+    })
 }
 
 

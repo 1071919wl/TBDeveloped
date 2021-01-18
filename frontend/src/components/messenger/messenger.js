@@ -40,11 +40,13 @@ const Messenger = () => {
         setMessage(e.target.value);
     }
 
+
     return (
         <div>
             <div>
                 {messages.map((message, index) => {
                     if (message.id === yourID) {
+                        console.log('49', yourID)
                         return (
                             <div key={index}>
                                 <div>
