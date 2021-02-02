@@ -18,11 +18,11 @@ You're someone with an idea that you know for sure will take off, or maybe you'r
 
 * In each question show page, developers can respond to these as well as set up a consultation date to further discuss.
 
-![image](https://github.com/oli223lopez/TBDeveloped/blob/master/frontend/src/assets/images/production_readme/posts.png)
+![image](https://github.com/1071919wl/TBDeveloped/blob/splash/frontend/src/assets/images/production_readme/posts.png)
 
 * Users can interact via video chat
 
-![image](https://github.com/oli223lopez/TBDeveloped/blob/master/frontend/src/assets/images/production_readme/ex3.png)
+![image](https://github.com/1071919wl/TBDeveloped/blob/splash/frontend/src/assets/images/production_readme/ex3.png)
 
 
 
